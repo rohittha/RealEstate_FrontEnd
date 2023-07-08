@@ -117,7 +117,7 @@
   margin-left: 20px;
 }
 
-.white_btn {
+/* .white_btn {
   border: none;
   outline: none;
   padding: 12px 0;
@@ -128,4 +128,22 @@
   font-size: 14px;
   cursor: pointer;
   margin-right: 20px;
+} */
+
+.white_btn {
+  border: none;
+  outline: none;
+  padding: 12px 10px;
+  /* background-color: white; */
+  color: white;
+  border-radius: 10px;
+  width: 120px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
 }

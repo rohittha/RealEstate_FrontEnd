@@ -13,7 +13,7 @@ const Main = () => {
   //   };
 
   return (
-    <div className={styles.main_container}>
+    <div>
       <Navbar />
 
       {/* <AddProperty /> */}

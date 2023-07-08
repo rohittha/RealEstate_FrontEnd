@@ -12,20 +12,24 @@ const Navbar = () => {
   return (
     <div className={styles.main_container}>
       <nav className={styles.navbar}>
-        <h1>HomeWise</h1>
+        <div>
+          <h1>HomeWise</h1>
+        </div>
         {/* <Link to="/addproperty">
           <button className={styles.white_btn}>Add Property</button>
         </Link> */}
 
-        <Link to="/main">
-          <button className={styles.white_btn}> Dashboard </button>
-        </Link>
-        <Link to="/addproperty">
-          <button className={styles.white_btn}>Add Property</button>
-        </Link>
-        <button className={styles.white_btn} onClick={handleLogout}>
-          Logout
-        </button>
+        <div>
+          <Link to="/main">
+            <a className={styles.white_btn}> Dashboard </a>
+          </Link>
+          <Link to="/addproperty">
+            <a className={styles.white_btn}>Add Property</a>
+          </Link>
+          <a className={styles.white_btn} onClick={handleLogout}>
+            Logout
+          </a>
+        </div>
       </nav>
     </div>
   );

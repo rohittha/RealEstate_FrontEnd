@@ -1,0 +1,8 @@
+.propertyCard {
+  text-align: left;
+  padding: 4px;
+  margin: 30px;
+  background-color: whitesmoke;
+  width: 320px;
+  box-shadow: 1.5px 6px 11px 1.5px rgba(0, 0, 0, 0.15);
+}

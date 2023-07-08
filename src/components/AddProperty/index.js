@@ -18,9 +18,17 @@ function AddProperty() {
     price: "",
     listingtype: "",
     coverimage: "",
+    imagefile: null,
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (event) => {
+    setSelectedImage(event.target.files[0]);
+    // setData({ ...data, ["coverimage"]: event.target.files[0] });
+    //setData({ ...data, ["imagefile"]: event.target.files[0] });
+  };
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -30,8 +38,16 @@ function AddProperty() {
     e.preventDefault();
     console.log("Property Submit START!");
     try {
+      const formData = new FormData();
+      formData.append("imagefile", selectedImage);
+      console.log("formData= ", formData);
+      //setData({ ...data, ["coverimage"]: selectedImage });
+      setData({ ...data, ["imagefile"]: selectedImage });
+      console.log("Data image = ", data);
+
       const url = "http://localhost:8080/api/properties";
       const { data: res } = await axios.post(url, data);
+
       navigate("/main");
       console.log("Property Submit COMPLETED!", res.message);
     } catch (error) {
@@ -156,8 +172,8 @@ function AddProperty() {
             type="file"
             placeholder="Upload Image"
             name="coverimage"
-            onChange={handleChange}
-            value={data.coverimage}
+            onChange={handleImageChange}
+            //value={data.coverimage}
             required
             className={styles.input}
           />
