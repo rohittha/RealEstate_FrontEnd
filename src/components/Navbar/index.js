@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
+// import { useDispatch, useSelector } from "react-redux";
 
 // function Navbar() {
 const Navbar = () => {
+  // const dispatch = useDispatch();
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
@@ -20,7 +22,7 @@ const Navbar = () => {
         </Link> */}
 
         <div>
-          <Link to="/main">
+          <Link to="/admindashboard">
             <a className={styles.white_btn}> Dashboard </a>
           </Link>
           <Link to="/addproperty">

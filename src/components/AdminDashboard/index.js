@@ -5,6 +5,11 @@ import axios from "axios";
 import Navbar from "../Navbar";
 
 function AdminDashboard() {
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token");
+  //   window.location.reload();
+  // };
+
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
 

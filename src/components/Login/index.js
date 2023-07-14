@@ -3,7 +3,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
+// import { useDispatch, useSelector } from "react-redux";
+
 const Login = () => {
+  // const dispatch = useDispatch();
+  // const { cartItems, total, amount } = useSelector((store) => store.cart);
+
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
