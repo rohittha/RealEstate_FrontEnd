@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../../redux/features/user/userSlice";
+import { useDispatch } from "react-redux";
 
 // function Navbar() {
 const Navbar = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.reload();
+    dispatch(logoutUser());
   };
 
   return (

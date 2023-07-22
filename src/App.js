@@ -4,8 +4,11 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AddProperty from "./components/AddProperty";
 import AdminDashboard from "./components/AdminDashboard";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+  const searchState = useSelector((store) => store.properties);
   const user = localStorage.getItem("token");
 
   return (

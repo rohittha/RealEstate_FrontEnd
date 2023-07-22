@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-
-// import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../../redux/features/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
-  // const dispatch = useDispatch();
-  // const { cartItems, total, amount } = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
+  //const { userToken, userEmail } = useSelector((store) => store.user);
+  // useEffect(() => {
+  //   dispatch(loginUser({ token: userToken, email: userEmail }));
+  // }, [userToken]);
 
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
@@ -21,7 +24,8 @@ const Login = () => {
     try {
       const url = "http://localhost:8080/api/auth";
       const { data: res } = await axios.post(url, data);
-      localStorage.setItem("token", res.data);
+      //localStorage.setItem("token", res.data);
+      dispatch(loginUser({ token: res.data }));
       window.location = "/";
     } catch (error) {
       if (

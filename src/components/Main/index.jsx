@@ -4,15 +4,6 @@ import Navbar from "../Navbar";
 import styles from "./styles.module.css";
 
 const Main = () => {
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.reload();
-  };
-
-  //   const callAddProp = () => {
-  //     <AddProperty />;
-  //   };
-
   return (
     <div>
       <Navbar />
