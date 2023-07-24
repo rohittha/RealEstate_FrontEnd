@@ -17,18 +17,24 @@ function AddProperty() {
     baths: "",
     price: "",
     listingtype: "",
-    coverimage: "",
-    imagefile: null,
+    // coverimage: "",
+    // imagefile: "",
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [selectedImage, setSelectedImage] = useState(null);
+  // const [selectedImage, setSelectedImage] = useState("");
+  const [selectedFiles, setSelectedFiles] = useState([]);
 
-  const handleImageChange = (event) => {
-    setSelectedImage(event.target.files[0]);
-    // setData({ ...data, ["coverimage"]: event.target.files[0] });
-    //setData({ ...data, ["imagefile"]: event.target.files[0] });
+  const handleFileChange = (e) => {
+    setSelectedFiles(e.target.files);
   };
+
+  // const handleImageChange = (event) => {
+  //   setSelectedImage(event.target.files[0]);
+
+  //   // setData({ ...data, ["coverimage"]: event.target.files[0] });
+  //   //setData({ ...data, ["imagefile"]: event.target.files[0] });
+  // };
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -39,18 +45,39 @@ function AddProperty() {
     console.log("Property Submit START!");
     try {
       const formData = new FormData();
-      formData.append("imagefile", selectedImage);
-      console.log("formData= ", formData);
-      //setData({ ...data, ["coverimage"]: selectedImage });
-      setData({ ...data, ["imagefile"]: selectedImage });
-      console.log("Data image = ", data);
+      for (const file of selectedFiles) {
+        formData.append("files", file);
+      }
 
-      const url = "http://localhost:8080/api/properties";
-      const { data: res } = await axios.post(url, data);
+      // formData.append("imagefile", selectedImage);
+      setData({ ...data });
+      console.log("Data = ", data);
+      formData.append("data", JSON.stringify(data));
+      // try {
+      const response = await axios.post(
+        "http://localhost:8080/api/properties",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log("File upload successful:", response.data);
+      // Do something after successful upload
+      // } catch (error) {
+      //   console.error("File upload failed:", error);
+      //   // Handle upload error
+      // }
+
+      // const url = "http://localhost:8080/api/properties";
+      // const { data: res } = await axios.post(url, data);
 
       navigate("/main");
-      console.log("Property Submit COMPLETED!", res.message);
+      console.log("Property Submit COMPLETED!", response.message);
     } catch (error) {
+      console.error("File upload failed:", error);
       if (
         error.response &&
         error.response.status >= 400 &&
@@ -167,7 +194,11 @@ function AddProperty() {
             required
             className={styles.input}
           />
-          <label>Property Image</label>
+          <label>
+            Upload Files:
+            <input type="file" multiple onChange={handleFileChange} />
+          </label>
+          {/* <label>Property Image</label>
           <input
             type="file"
             placeholder="Upload Image"
@@ -176,7 +207,7 @@ function AddProperty() {
             //value={data.coverimage}
             required
             className={styles.input}
-          />
+          /> */}
           {error && <div className={styles.error_msg}>{error}</div>}
           <button type="submit" className={styles.green_btn}>
             Submit Property

@@ -9,16 +9,32 @@ function PropertyCard({ data }) {
     bedrooms,
     city,
     country,
-    coverimage,
+
     listingtype,
     price,
     province,
     zipcode,
+    propertyImages,
   } = data;
 
   return (
     <div className={Styles.propertyCard}>
-      <img src={coverimage} alt="Property Cover" />
+      {propertyImages.length > 0 && (
+        <div>
+          <ul>
+            {propertyImages.map((filename, index) => (
+              <li key={index}>
+                <img
+                  height={50}
+                  width={50}
+                  src={`http://localhost:8080/uploads/${filename}`}
+                  alt={filename}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <h2>{listingtype}</h2>
       <p>{addressline1}</p>
       <p>{addressline2}</p>
@@ -26,6 +42,7 @@ function PropertyCard({ data }) {
         {city}, {province}, {zipcode}
       </p>
       <p>{country}</p>
+
       <p>{bedrooms} Bedrooms</p>
       <p>{baths} Bathrooms</p>
       <p>Price: {price}</p>
