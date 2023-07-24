@@ -55,7 +55,8 @@ function AddProperty() {
       formData.append("data", JSON.stringify(data));
       // try {
       const response = await axios.post(
-        "http://localhost:8080/api/properties",
+        //"http://localhost:8080/api/properties",
+        "https://homewise-backend.azurewebsites.net/api/properties",
         formData,
         {
           headers: {

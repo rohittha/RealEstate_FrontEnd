@@ -37,7 +37,10 @@ function AdminDashboard() {
   const fetchData = async (e) => {
     try {
       console.log("In Admin dash!");
-      const url = "http://localhost:8080/api/properties/getAllProperty";
+      //const url = "http://localhost:8080/api/properties/getAllProperty";
+      const url =
+        "https://homewise-backend.azurewebsites.net/api/properties/getAllProperty";
+
       const response = await axios.get(url);
       const resdata = response.data;
       console.log("Data from Node+= ", resdata);
@@ -59,7 +62,9 @@ function AdminDashboard() {
     try {
       console.log("In Search properties!");
       console.log("searchfields:", searchfields);
-      const url = "http://localhost:8080/api/properties/getProperties";
+      //const url = "http://localhost:8080/api/properties/getProperties";
+      const url =
+        "https://homewise-backend.azurewebsites.net/api/properties/getProperties";
       const response = await axios.post(url, searchfields);
       const resdata = response.data;
       console.log("Data from Node+= ", resdata);
