@@ -3,6 +3,7 @@ import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import AddProperty from "./components/AddProperty";
+import SearchProperty from "./components/SearchProperty";
 import AdminDashboard from "./components/AdminDashboard";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/login" exact element={<Login />} />
       {/* <Route path="/main" exact element={<AdminDashboard />} /> */}
       <Route path="/admindashboard" exact element={<AdminDashboard />} />
+      <Route path="/searchProperty" exact element={<SearchProperty />} />
       <Route path="/" element={<Navigate replace to="/login" />} />
     </Routes>
   );
