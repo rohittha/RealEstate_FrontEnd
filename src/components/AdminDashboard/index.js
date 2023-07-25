@@ -5,6 +5,7 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProperties } from "../../redux/features/properties/propertiesSlice";
+const apiURL = process.env.REACT_APP_API_URL;
 
 function AdminDashboard() {
   const dispatch = useDispatch();
@@ -38,8 +39,7 @@ function AdminDashboard() {
     try {
       console.log("In Admin dash!");
       //const url = "http://localhost:8080/api/properties/getAllProperty";
-      const url =
-        "https://homewise-backend.azurewebsites.net/api/properties/getAllProperty";
+      const url = apiURL + "api/properties/getAllProperty";
 
       const response = await axios.get(url);
       const resdata = response.data;
@@ -63,8 +63,7 @@ function AdminDashboard() {
       console.log("In Search properties!");
       console.log("searchfields:", searchfields);
       //const url = "http://localhost:8080/api/properties/getProperties";
-      const url =
-        "https://homewise-backend.azurewebsites.net/api/properties/getProperties";
+      const url = apiURL + "api/properties/getProperties";
       const response = await axios.post(url, searchfields);
       const resdata = response.data;
       console.log("Data from Node+= ", resdata);

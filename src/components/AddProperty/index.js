@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+const apiURL = process.env.REACT_APP_API_URL;
 
 function AddProperty() {
   const [data, setData] = useState({
@@ -53,10 +54,11 @@ function AddProperty() {
       setData({ ...data });
       console.log("Data = ", data);
       formData.append("data", JSON.stringify(data));
+      const url = apiURL + "api/properties";
       // try {
       const response = await axios.post(
         //"http://localhost:8080/api/properties",
-        "https://homewise-backend.azurewebsites.net/api/properties",
+        url,
         formData,
         {
           headers: {
