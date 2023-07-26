@@ -43,7 +43,7 @@ function AdminDashboard() {
 
       const response = await axios.get(url);
       const resdata = response.data;
-      console.log("Data from Node+= ", resdata);
+      console.log("Properties from API += ", resdata);
       setData(resdata);
       //window.location = "/";
     } catch (error) {

@@ -1,5 +1,6 @@
 import React from "react";
 import Styles from "./styles.module.css";
+const imagesURL = process.env.REACT_APP_IMAGES_URL;
 
 function PropertyCard({ data }) {
   const {
@@ -16,7 +17,7 @@ function PropertyCard({ data }) {
     zipcode,
     propertyImages,
   } = data;
-
+  console.log("imagesURL: ", imagesURL);
   return (
     <div className={Styles.propertyCard}>
       {propertyImages.length > 0 && (
@@ -27,7 +28,7 @@ function PropertyCard({ data }) {
                 <img
                   height={50}
                   width={50}
-                  src={`http://localhost:8080/uploads/${filename}`}
+                  src={imagesURL + filename}
                   alt={filename}
                 />
               </li>
