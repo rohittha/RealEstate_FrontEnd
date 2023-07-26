@@ -26,6 +26,8 @@ function PropertyCard({ data }) {
     propertyImages,
   } = data;
   console.log("imagesURL: ", imagesURL);
+
+  //carousel configs
   const settings = {
     dots: true,
     infinite: true,
