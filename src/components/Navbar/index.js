@@ -22,6 +22,10 @@ const Navbar = () => {
         </Link> */}
 
         <div>
+          <Link to="/searchProperty">
+            {/* Need to put a small search icon */}
+            <a className={styles.white_btn}> Search Property </a>
+          </Link>
           <Link to="/admindashboard">
             <a className={styles.white_btn}> Dashboard </a>
           </Link>
