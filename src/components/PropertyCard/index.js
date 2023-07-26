@@ -114,7 +114,7 @@ function PropertyCard({ data }) {
                   <img
                     height={100}
                     width={100}
-                    src={`http://localhost:8080/uploads/${filename}`}
+                     src={imagesURL + filename}
                     alt={filename}
                   />
                 </div>
