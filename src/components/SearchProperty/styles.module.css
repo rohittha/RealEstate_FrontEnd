@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #ffffff;
 }
 
 .form_container h1 {
@@ -63,7 +64,7 @@
   outline: none;
   padding: 12px 0;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 180px;
   font-weight: bold;
   font-size: 14px;
@@ -71,7 +72,7 @@
 }
 
 .green_btn {
-  background-color: #b13b8e;
+  background-color: black;
   color: white;
   margin: 10px;
 }

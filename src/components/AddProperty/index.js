@@ -94,10 +94,11 @@ function AddProperty() {
   return (
     <div className={styles.main_container}>
       <Navbar />
+      <br />
       {/* <h1>Hello from Addproperty</h1> */}
       <div className={styles.right}>
         <form className={styles.form_container} onSubmit={handleSubmit}>
-          <h1> Add Property </h1>
+          <h2> Add Property </h2>
           <label>Address Line 1</label>
           <input
             type="text"
@@ -197,10 +198,13 @@ function AddProperty() {
             required
             className={styles.input}
           />
-          <label>
-            Upload Files:
-            <input type="file" multiple onChange={handleFileChange} />
-          </label>
+          <label>Upload Files:</label>
+          <input
+            className={styles.input}
+            type="file"
+            multiple
+            onChange={handleFileChange}
+          />
           {/* <label>Property Image</label>
           <input
             type="file"

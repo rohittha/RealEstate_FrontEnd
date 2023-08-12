@@ -1,4 +1,8 @@
 .signup_container {
+  background-image: url("https://img.freepik.com/free-photo/construction-illustration-city-skyline_53876-103044.jpg?w=996&t=st=1691721998~exp=1691722598~hmac=319adbadaab5544b5144ddfbc7b7ae7b2281baef1d5bb36e041c10c3b569b454");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
   min-height: 100vh;
   background-color: #f5f5f5;
@@ -22,7 +26,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #b13b8e;
+  background-color: black;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -92,7 +96,7 @@
 }
 
 .green_btn {
-  background-color: #b13b8e;
+  background-color: black;
   color: white;
   margin: 10px;
 }
