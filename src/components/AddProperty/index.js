@@ -4,6 +4,8 @@ import Navbar from "../Navbar";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "../Footer";
+const apiURL = process.env.REACT_APP_API_URL;
 
 function AddProperty() {
   const [data, setData] = useState({
@@ -53,10 +55,11 @@ function AddProperty() {
       setData({ ...data });
       console.log("Data = ", data);
       formData.append("data", JSON.stringify(data));
+      const url = apiURL + "api/properties";
       // try {
       const response = await axios.post(
         //"http://localhost:8080/api/properties",
-        "https://homewise-backend.azurewebsites.net/api/properties",
+        url,
         formData,
         {
           headers: {
@@ -92,10 +95,11 @@ function AddProperty() {
   return (
     <div className={styles.main_container}>
       <Navbar />
+      <br />
       {/* <h1>Hello from Addproperty</h1> */}
       <div className={styles.right}>
         <form className={styles.form_container} onSubmit={handleSubmit}>
-          <h1> Add Property </h1>
+          <h2> Add Property </h2>
           <label>Address Line 1</label>
           <input
             type="text"
@@ -195,10 +199,13 @@ function AddProperty() {
             required
             className={styles.input}
           />
-          <label>
-            Upload Files:
-            <input type="file" multiple onChange={handleFileChange} />
-          </label>
+          <label>Upload Files:</label>
+          <input
+            className={styles.input}
+            type="file"
+            multiple
+            onChange={handleFileChange}
+          />
           {/* <label>Property Image</label>
           <input
             type="file"
@@ -215,6 +222,8 @@ function AddProperty() {
           </button>
         </form>
       </div>
+      <Footer />
+
     </div>
   );
 }

@@ -32,9 +32,18 @@ const Navbar = () => {
           <Link to="/addproperty">
             <a className={styles.white_btn}>Add Property</a>
           </Link>
-          <a className={styles.white_btn} onClick={handleLogout}>
-            Logout
-          </a>
+          <Link to="/contactUs">
+            <a className={styles.white_btn}>
+              ContactUs
+            </a>
+          </Link>
+          <Link to="/">
+            <a className={styles.white_btn}>
+              Logout
+            </a>
+          </Link>
+
+
         </div>
       </nav>
     </div>

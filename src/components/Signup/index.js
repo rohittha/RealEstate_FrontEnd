@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
+import Footer from "../Footer";
+const apiURL = process.env.REACT_APP_API_URL;
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -21,7 +23,9 @@ const Signup = () => {
     e.preventDefault();
     try {
       //const url = "http://localhost:8080/api/users";
-      const url = "https://homewise-backend.azurewebsites.net/api/users";
+      //const url = "https://homewise-backend.azurewebsites.net/api/users";
+      const url = apiURL + "api/users";
+
       const { data: res } = await axios.post(url, data);
       navigate("/login");
       console.log(res.message);
@@ -93,6 +97,8 @@ const Signup = () => {
           </form>
         </div>
       </div>
+      <Footer />
+
     </div>
   );
 };
