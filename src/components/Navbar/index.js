@@ -37,7 +37,7 @@ const Navbar = () => {
               ContactUs
             </a>
           </Link>
-          <Link to="/">
+          <Link to="/login">
             <a className={styles.white_btn}>
               Logout
             </a>
