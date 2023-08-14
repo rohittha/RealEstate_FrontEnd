@@ -62,9 +62,9 @@ function SearchProperty() {
     try {
       console.log("In Search properties!");
       console.log("searchfields:", searchfields);
-      const url = "http://localhost:8080/api/properties/getProperties";
-      // const url =
-      // "https://homewise-backend.azurewebsites.net/api/properties/getProperties";
+      //const url = "http://localhost:8080/api/properties/getProperties";
+       const url =
+       "https://homewise-backend.azurewebsites.net/api/properties/getProperties";
       const response = await axios.post(url, searchfields);
       const resdata = response.data;
       console.log("Data from Node+= ", resdata);
