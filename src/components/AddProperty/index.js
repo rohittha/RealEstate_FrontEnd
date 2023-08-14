@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer";
-const apiURL = process.env.REACT_APP_API_URL;
+const apiURL = process.env.REACT_APP_API_6URL;
 
 function AddProperty() {
   const [data, setData] = useState({

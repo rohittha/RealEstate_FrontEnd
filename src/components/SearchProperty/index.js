@@ -146,7 +146,6 @@ function SearchProperty() {
           <PropertyCard key={item.id} data={item} />
         ))}
       </div>
-
     </div>
   );
 }
