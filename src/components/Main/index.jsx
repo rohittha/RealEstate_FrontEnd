@@ -1,5 +1,6 @@
 import AddProperty from "../AddProperty";
 import AdminDashboard from "../AdminDashboard";
+import Footer from "../Footer";
 import Navbar from "../Navbar";
 import styles from "./styles.module.css";
 
@@ -8,6 +9,8 @@ const Main = () => {
     <div>
       <Navbar />
       <AdminDashboard></AdminDashboard>
+      <Footer />
+
 
       {/* <AddProperty /> */}
       {/* <nav className={styles.navbar}>

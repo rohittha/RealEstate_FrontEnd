@@ -5,6 +5,7 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProperties } from "../../redux/features/properties/propertiesSlice";
+import Footer from "../Footer";
 
 function SearchProperty() {
   const dispatch = useDispatch();

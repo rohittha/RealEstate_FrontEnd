@@ -6,6 +6,8 @@ import AddProperty from "./components/AddProperty";
 import SearchProperty from "./components/SearchProperty";
 import AdminDashboard from "./components/AdminDashboard";
 import { useDispatch, useSelector } from "react-redux";
+import Footer from "./components/Footer";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +24,8 @@ function App() {
       <Route path="/admindashboard" exact element={<AdminDashboard />} />
       <Route path="/searchProperty" exact element={<SearchProperty />} />
       <Route path="/" element={<Navigate replace to="/login" />} />
+      <Route path="/footer" exact element={<Footer />} />
+      <Route path="/contactUs" exact element={<ContactUs />} />
     </Routes>
   );
 }

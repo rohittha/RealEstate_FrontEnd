@@ -5,6 +5,7 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProperties } from "../../redux/features/properties/propertiesSlice";
+import Footer from "../Footer";
 const apiURL = process.env.REACT_APP_API_URL;
 
 function AdminDashboard() {
@@ -55,6 +56,7 @@ function AdminDashboard() {
           <PropertyCard key={item.id} data={item} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
