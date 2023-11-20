@@ -111,6 +111,7 @@ function PropertyCard({ data }) {
               {propertyImages.map((filename, index) => (
                 <div key={index}>
                   <img
+                    className={Styles.image}
                     height={100}
                     width={100}
                     src={imagesURL + filename}
@@ -134,7 +135,9 @@ function PropertyCard({ data }) {
           <p>{formFields.bedrooms} Bedrooms</p>
           <p>{formFields.baths} Bathrooms</p>
           <p>Price: {formFields.price}</p>
-          <button onClick={handleEditClick}>Edit</button>
+          <button className={styles.green_btn} onClick={handleEditClick}>
+            Edit
+          </button>
         </div>
       ) : (
         <div className={Styles.propertyCard}>
@@ -143,6 +146,7 @@ function PropertyCard({ data }) {
               {propertyImages.map((filename, index) => (
                 <div key={index}>
                   <img
+                    className={Styles.image}
                     height={100}
                     width={100}
                     src={imagesURL + filename}
@@ -156,7 +160,7 @@ function PropertyCard({ data }) {
           )}
           <br />
           <form className={styles.form_container} onSubmit={handleSubmit}>
-            <label>Address Line 1</label>
+            <label className={styles.label}>Address Line 1</label>
             <input
               type="text"
               placeholder="Address Line 1"
@@ -165,7 +169,7 @@ function PropertyCard({ data }) {
               value={formFields.addressline1}
               className={styles.input}
             />
-            <label>Address Line 2</label>
+            <label className={styles.label}>Address Line 2</label>
             <input
               type="text"
               placeholder="Address Line 2"
@@ -175,7 +179,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
-            <label>City</label>
+            <label className={styles.label}>City</label>
             <input
               type="text"
               placeholder="City"
@@ -185,7 +189,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
-            <label>Province</label>
+            <label className={styles.label}>Province</label>
             <input
               type="text"
               placeholder="Province"
@@ -195,7 +199,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
-            <label>Zipcode</label>
+            <label className={styles.label}>Zipcode</label>
             <input
               type="text"
               placeholder="Zip Code"
@@ -205,7 +209,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />{" "}
-            <label>Country</label>
+            <label className={styles.label}>Country</label>
             <input
               type="text"
               placeholder="Country"
@@ -215,7 +219,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
-            <label>Bedrooms</label>
+            <label className={styles.label}>Bedrooms</label>
             <input
               type="text"
               placeholder="Bedrooms"
@@ -225,7 +229,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
-            <label>Baths</label>
+            <label className={styles.label}>Baths</label>
             <input
               type="text"
               placeholder="Baths"
@@ -235,7 +239,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
-            <label>Price</label>
+            <label className={styles.label}>Price</label>
             <input
               type="text"
               placeholder="Price"
@@ -245,7 +249,7 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
-            <label>Listing Type</label>
+            <label className={styles.label}>Listing Type</label>
             <input
               type="text"
               placeholder="Listing Type"
@@ -255,8 +259,11 @@ function PropertyCard({ data }) {
               required
               className={styles.input}
             />
+            <br />
             {error && <div className={styles.error_msg}>{error}</div>}
-            <button type="submit">Save</button>
+            <button className={styles.save_btn} type="submit">
+              Save
+            </button>
           </form>
         </div>
       )}
