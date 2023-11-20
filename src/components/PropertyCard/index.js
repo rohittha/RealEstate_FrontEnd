@@ -25,7 +25,6 @@ function PropertyCard({ data }) {
     zipcode,
     propertyImages,
   } = data;
-  console.log("imagesURL: ", imagesURL);
 
   //carousel configs
   const settings = {
@@ -114,7 +113,7 @@ function PropertyCard({ data }) {
                   <img
                     height={100}
                     width={100}
-                     src={imagesURL + filename}
+                    src={imagesURL + filename}
                     alt={filename}
                   />
                 </div>
